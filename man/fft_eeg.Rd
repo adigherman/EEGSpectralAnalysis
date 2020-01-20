@@ -16,7 +16,7 @@ typycally equal to 125Hz. Default value is 125.}
 calculated. Default value is 32.}
 }
 \value{
-Vector containing the values:
+List containing the elements:
   - absolute_spectrum:    A matrix with every row corresponding to
                           a frequency between 'lowest_frequency' and
                           'max_frequency'. Every column corresponds

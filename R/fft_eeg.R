@@ -9,7 +9,7 @@
 #' @param max_frequency The maximum frequency for which the spectrum is being 
 #'   calculated. Default value is 32.
 #'   
-#' @return Vector containing the values:
+#' @return List containing the elements:
 #'   - absolute_spectrum:    A matrix with every row corresponding to
 #'                           a frequency between 'lowest_frequency' and
 #'                           'max_frequency'. Every column corresponds
