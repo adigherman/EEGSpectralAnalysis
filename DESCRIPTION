@@ -6,7 +6,7 @@ Authors@R:
            family = "Gherman",
            role = c("aut", "cre"),
            email = "adig@jhu.edu")
-Description: Compute and plot various spectral EEG analyses
+Description: Compute and plot various spectral EEG analyses.
 BugReports: https://github.com/adigherman/EEGSpectralAnalysis/issues
 License: GPL-2
 Encoding: UTF-8

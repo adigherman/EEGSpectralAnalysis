@@ -1,5 +1,5 @@
 # EEGSpectralAnalysis
-Spectral Analysis EEG Tools
+EEG Spectral Analysis Tools
 
 ## Installing the EEGSpectralAnalysis package
 
