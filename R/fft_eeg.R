@@ -28,9 +28,9 @@
 #'                           also the first entry of 'estimated_frequencies'
 #'                
 #' @export
-spectrogram_CMC = function(eeg_signal,
-                           sampling_frequency = 125,
-                           max_frequency = 32) {
+fft_eeg = function(eeg_signal,
+                   sampling_frequency = 125,
+                   max_frequency = 32) {
   
   e <- read.csv(file = eeg_signal, header=FALSE)
   e <- e * 1000000
