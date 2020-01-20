@@ -18,7 +18,7 @@ To calculate absolute and power spectrum as well as estimated and lowest frequen
 * `max_frequency` which represents maximum sampling frequency (default value is 32).
 
 ``` {r}
-> eeg_params <- fft_eeg('EEG_samples//EEG10009_v1.csv')
+> eeg_params <- fft_eeg('EEG_samples/EEG10009_v1.csv')
 > str(eeg_params)
 List of 6
  $ absolute_spectrum    : num [1:161, 1:6474] 131 597 763 458 746 ...
