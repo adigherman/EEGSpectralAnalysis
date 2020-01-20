@@ -26,7 +26,10 @@
 #'
 #'   - lowest_frequency:     The smallest estimable frequency. This is
 #'                           also the first entry of 'estimated_frequencies'
-#'                
+#'   
+#' @importFrom stats fft
+#' @importFrom utils read.table     
+#' @importFrom signal hanning   
 #' @export
 fft_eeg = function(eeg_signal,
                    sampling_frequency = 125,
