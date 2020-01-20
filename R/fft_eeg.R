@@ -32,7 +32,7 @@ fft_eeg = function(eeg_signal,
                    sampling_frequency = 125,
                    max_frequency = 32) {
   
-  e <- read.csv(file = eeg_signal, header=FALSE)
+  e <- read.table(file = eeg_signal)
   e <- e * 1000000
   length_record <- nrow(e)
   
