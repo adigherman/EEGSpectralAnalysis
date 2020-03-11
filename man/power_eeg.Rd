@@ -5,7 +5,7 @@
 \title{Compute EEG signal power}
 \usage{
 power_eeg(
-  power_spect,
+  power_spectrum,
   freq_min = 0.8,
   freq_max = 4,
   num_sec_w = 5,
@@ -13,7 +13,7 @@ power_eeg(
 )
 }
 \arguments{
-\item{power_spect}{matrix containing the square of the Fourier
+\item{power_spectrum}{matrix containing the square of the Fourier
 coefficients for an EEG data set. Each column corresponds to 
 a 5 second interval window. Each column corresponds to a 
 frequency. Lowest frequency is 1/num_sec_w, typically 0.2Hz}
