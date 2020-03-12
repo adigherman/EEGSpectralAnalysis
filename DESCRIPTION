@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "adig@jhu.edu")
 Description: Compute and plot various spectral EEG analyses.
-Imports: signal, RcppRoll, pracma
+Imports: signal, RcppRoll, pracma, edfReader
 BugReports: https://github.com/adigherman/EEGSpectralAnalysis/issues
 License: GPL-2
 Encoding: UTF-8

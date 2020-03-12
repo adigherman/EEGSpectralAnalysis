@@ -7,7 +7,7 @@
 fft_eeg(eeg_signal, sampling_frequency = 125, max_frequency = 32)
 }
 \arguments{
-\item{eeg_signal}{CSV file contining the the EEG signal expressed in micro-Volts}
+\item{eeg_signal}{EEG signal expressed in micro-Volts}
 
 \item{sampling_frequency}{Sampling frequency of the EEG signal. This is 
 typycally equal to 125Hz. Default value is 125.}

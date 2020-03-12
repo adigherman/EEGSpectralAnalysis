@@ -3,7 +3,7 @@
 #' @description Calculate absolute and power spectrum as well as estimated and 
 #'   lowest frequencies for an EEG signal
 #'
-#' @param eeg_signal CSV file contining the the EEG signal expressed in micro-Volts
+#' @param eeg_signal EEG signal expressed in micro-Volts
 #' @param sampling_frequency Sampling frequency of the EEG signal. This is 
 #'   typycally equal to 125Hz. Default value is 125.
 #' @param max_frequency The maximum frequency for which the spectrum is being 
@@ -35,9 +35,8 @@ fft_eeg = function(eeg_signal,
                    sampling_frequency = 125,
                    max_frequency = 32) {
   
-  e <- read.table(file = eeg_signal)
-  e <- e * 1000000
-  length_record <- nrow(e)
+  eeg_signal <- eeg_signal * 1000000
+  length_record <- length(eeg_signal)
   
   # This is the duration of EEG record used for analysis (in seconds) per window
   num_seconds_window <- 5;
@@ -52,22 +51,22 @@ fft_eeg = function(eeg_signal,
   #Number of windows (that are in length = recdur) for which the FFT will be calculated;             
   num_windows <- floor(length_record/window_length);
   
-  e <- matrix(e$V1,window_length, num_windows)
+  eeg_signal <- matrix(eeg_signal,window_length, num_windows)
   
   #Perform the fft on the data after hanning windowing
-  e <- scale(e,scale=FALSE)
+  eeg_signal <- scale(eeg_signal,scale=FALSE)
   hanning_matrix <- hanning(window_length+2)
   hanning_matrix <- hanning_matrix[1:window_length+1]
   hanning_matrix <- hanning_matrix * matrix(1,window_length,num_windows)
   
-  e <- e * hanning_matrix
-  e <- apply(e, 2, function(x) fft(as.numeric(x)))
+  eeg_signal <- eeg_signal * hanning_matrix
+  eeg_signal <- apply(eeg_signal, 2, function(x) fft(as.numeric(x)))
   
   #Calculate the absolute 
   #This is the calculation of power of the spectrum 
   
   end_frequency <- floor(max_frequency*num_seconds_window) + 1
-  absolute_spectrum <- abs(e[1:end_frequency,])
+  absolute_spectrum <- abs(eeg_signal[1:end_frequency,])
   power_spectrum <- absolute_spectrum^2
   estimated_frequencies <- seq(1,end_frequency,1)/num_seconds_window
   
