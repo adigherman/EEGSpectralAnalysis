@@ -11,6 +11,16 @@ remotes::install_github("adigherman/EEGSpectralAnalysis")
 
 ## Usage Examples
 
+### Read sigals from an EDF file
+
+To retrieve the content of an EDF file we can use the `read_edf()` function:
+
+``` {r}
+edf_content <- read_edf('../EDF-samples/3O9_EEG.edf')
+> head(edf_content$P5$signal)
+[1] -67.66641 -66.75259 -64.19233 -67.28040 -69.98246 -73.58258
+```
+
 ### Calculate absolute and power spectrum
 
 To calculate absolute and power spectrum as well as estimated and lowest frequencies for an EEG signal we will use the `fft_eeg()` function. The parameters of the function are:
@@ -20,14 +30,12 @@ To calculate absolute and power spectrum as well as estimated and lowest frequen
 * `max_frequency` which represents maximum sampling frequency (default value is 32).
 
 ``` {r}
-> eeg_filepath <- system.file("extdata", "EEG10009_v1.csv.gz", package = "EEGSpectralAnalysis")
-> eeg_signal <- read.table(file = eeg_filepath)
-> eeg_signal <- eeg_signal$V1
+> eeg_signal <- edf_content$P5$signal
 > eeg_params <- fft_eeg(eeg_signal)
 > str(eeg_params)
 List of 6
- $ absolute_spectrum    : num [1:161, 1:6474] 131 597 763 458 746 ...
- $ power_spectrum       : num [1:161, 1:6474] 17146 356957 582410 209588 557206 ...
+ $ absolute_spectrum    : num [1:161, 1:129] 1.01e+09 1.48e+09 8.06e+08 6.01e+08 1.02e+09 ...
+ $ power_spectrum       : num [1:161, 1:129] 1.03e+18 2.20e+18 6.49e+17 3.61e+17 1.04e+18 ...
  $ estimated_frequencies: num [1:161] 0.2 0.4 0.6 0.8 1 1.2 1.4 1.6 1.8 2 ...
  $ lowest_frequency     : num 0.2
  $ num_seconds_window   : num 5
@@ -45,15 +53,13 @@ To calculate absolute and and relative band power in a defined frequency band we
 * `aggreg_level` - number of 5 second intervals used to aggregate power. Typically, this number is 6 to ensure a 30 second interval window (standard in EEG analysis).
 
 ``` {r}
-> eeg_filepath <- system.file("extdata", "EEG10009_v1.csv.gz", package = "EEGSpectralAnalysis")
-> eeg_signal <- read.table(file = eeg_filepath)
-> eeg_signal <- eeg_signal$V1
+> eeg_signal <- edf_content$P5$signal
 > eeg_params <- fft_eeg(eeg_signal)
 > power_eeg_params <- power_eeg(eeg_params$power_spectrum)
 > str(power_eeg_params)
 List of 4
- $ absolute_band_power : num [1:6474] 5443549 23583271 16321002 4640000 8043634 ...
- $ absolute_band_aggreg: num [1:1079] 10640555 8014268 14069995 6132555 11820995 ...
- $ relative_band_power : num [1:6474] 0.408 0.755 0.751 0.328 0.469 ...
- $ relative_band_aggreg: num [1:1079] 0.541 0.483 0.586 0.449 0.553 ...
+ $ absolute_band_power : num [1:129] 1.89e+18 1.75e+19 2.83e+18 5.94e+19 9.25e+17 ...
+ $ absolute_band_aggreg: num [1:21] 1.39e+19 1.80e+18 1.35e+18 1.42e+18 2.56e+18 ...
+ $ relative_band_power : num [1:129] 0.285 0.038 0.446 0.186 0.293 ...
+ $ relative_band_aggreg: num [1:21] 0.286 0.547 0.482 0.341 0.441 ...
  ```
