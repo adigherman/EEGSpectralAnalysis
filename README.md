@@ -28,6 +28,7 @@ To calculate absolute and power spectrum as well as estimated and lowest frequen
 * `eeg_signal` - EEG signal values;
 * `sampling_frequency` the EEG signal sampling frequency (default value is 125);
 * `max_frequency` which represents maximum sampling frequency (default value is 32).
+* `num_seconds_window` the duration of EEG record used for analysis (in seconds) per window
 
 ``` {r}
 > eeg_signal <- edf_content$P5$signal
