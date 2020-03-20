@@ -2,6 +2,7 @@
 
 export(fft_eeg)
 export(power_eeg)
+export(read_edf)
 importFrom(RcppRoll,roll_mean)
 importFrom(edfReader,readEdfHeader)
 importFrom(edfReader,readEdfSignals)

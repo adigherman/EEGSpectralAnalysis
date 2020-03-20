@@ -4,6 +4,7 @@
 #' 
 #' @importFrom edfReader readEdfHeader readEdfSignals
 #'  
+#' @export
 #' @return List containing the EDF file items
 
 read_edf = function(edf_file){
