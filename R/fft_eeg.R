@@ -8,6 +8,7 @@
 #'   typycally equal to 125Hz. Default value is 125.
 #' @param max_frequency The maximum frequency for which the spectrum is being 
 #'   calculated. Default value is 32.
+#' @param num_seconds_window the duration of EEG record used for analysis (in seconds) per window
 #'   
 #' @return List containing the elements:
 #'   - absolute_spectrum:    A matrix with every row corresponding to
@@ -33,13 +34,11 @@
 #' @export
 fft_eeg = function(eeg_signal,
                    sampling_frequency = 125,
-                   max_frequency = 32) {
+                   max_frequency = 32,
+                   num_seconds_window = 5) {
   
   eeg_signal <- eeg_signal * 1000000
   length_record <- length(eeg_signal)
-  
-  # This is the duration of EEG record used for analysis (in seconds) per window
-  num_seconds_window <- 5;
   
   #This is the number of datapoints in each 'window' which will be used for the FFT
   window_length <- num_seconds_window*sampling_frequency;

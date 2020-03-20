@@ -4,8 +4,8 @@
 #' 
 #' @importFrom edfReader readEdfHeader readEdfSignals
 #'  
-#' @export
 #' @return List containing the EDF file items
+#' @export
 
 read_edf = function(edf_file){
   edf_header <- readEdfHeader(edf_file)

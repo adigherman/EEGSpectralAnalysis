@@ -4,7 +4,12 @@
 \alias{fft_eeg}
 \title{Compute EEG signal parameters}
 \usage{
-fft_eeg(eeg_signal, sampling_frequency = 125, max_frequency = 32)
+fft_eeg(
+  eeg_signal,
+  sampling_frequency = 125,
+  max_frequency = 32,
+  num_seconds_window = 5
+)
 }
 \arguments{
 \item{eeg_signal}{EEG signal expressed in micro-Volts}
@@ -14,6 +19,8 @@ typycally equal to 125Hz. Default value is 125.}
 
 \item{max_frequency}{The maximum frequency for which the spectrum is being 
 calculated. Default value is 32.}
+
+\item{num_seconds_window}{the duration of EEG record used for analysis (in seconds) per window}
 }
 \value{
 List containing the elements:
