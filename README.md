@@ -64,3 +64,24 @@ List of 4
  $ relative_band_power : num [1:129] 0.285 0.038 0.446 0.186 0.293 ...
  $ relative_band_aggreg: num [1:21] 0.286 0.547 0.482 0.341 0.441 ...
  ```
+ 
+### Calculate Aggregated Power Levels for EEG bands
+ 
+ To calculate the aggregated power levels for each EEG band (Delta < 4, Theta ≥ 4 and < 8, Alpha ≥ 8 and < 14, Beta ≥ 14 and < 32 and Gamma ≥ 32 and < 50) we will use the `power_eef_bands` function.
+``` {r}
+ > power_eeg_bands(eeg_signal, sampling_frequency = 500, max_frequency = 50, num_sec_w = 6, aggreg_level = 27)
+$Delta
+[1] 1.077034e+20
+
+$Theta
+[1] 1.169681e+19
+
+$Alpha
+[1] 2.241449e+19
+
+$Beta
+[1] 3.248094e+18
+
+$Gamma
+[1] 1.899383e+18
+```
