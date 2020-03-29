@@ -22,6 +22,9 @@ obtain the Fourier coefficients. Typically, this number is 5}
 power. Typically, this number is 6 to ensure a 30 second 
 interval window (standard in EEG analysis)}
 }
+\value{
+List containing the aggregated power values for each EEG band
+}
 \description{
 Calculate power values for 
 each of the EEG bands:

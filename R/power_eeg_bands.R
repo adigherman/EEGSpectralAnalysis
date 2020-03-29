@@ -15,6 +15,8 @@
 #'    power. Typically, this number is 6 to ensure a 30 second 
 #'    interval window (standard in EEG analysis)   
 #' @export
+#' 
+#' @return List containing the aggregated power values for each EEG band
 power_eeg_bands = function(eeg_signal,
                            sampling_frequency = 125,
                            max_frequency = 32,
