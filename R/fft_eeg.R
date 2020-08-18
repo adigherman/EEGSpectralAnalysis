@@ -5,7 +5,7 @@
 #'
 #' @param eeg_signal EEG signal expressed in micro-Volts
 #' @param sampling_frequency Sampling frequency of the EEG signal. This is 
-#'   typycally equal to 125Hz. Default value is 125.
+#'   typically equal to 125Hz. Default value is 125.
 #' @param max_frequency The maximum frequency for which the spectrum is being 
 #'   calculated. Default value is 32.
 #' @param num_seconds_window the duration of EEG record used for analysis (in seconds) per window

@@ -15,6 +15,12 @@ power_eeg_bands(
 \arguments{
 \item{eeg_signal}{EEG signal expressed in micro-Volts}
 
+\item{sampling_frequency}{Sampling frequency of the EEG signal. This is 
+typically equal to 125Hz. Default value is 125.}
+
+\item{max_frequency}{The maximum frequency for which the spectrum is being 
+calculated. Default value is 32.}
+
 \item{num_sec_w}{number of seconds in a time window used to 
 obtain the Fourier coefficients. Typically, this number is 5}
 

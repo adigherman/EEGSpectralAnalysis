@@ -9,6 +9,10 @@
 #'     Gamma  ≥ 32 and < 50
 #'     
 #' @param eeg_signal EEG signal expressed in micro-Volts
+#' @param sampling_frequency Sampling frequency of the EEG signal. This is 
+#'   typically equal to 125Hz. Default value is 125.
+#' @param max_frequency The maximum frequency for which the spectrum is being 
+#'   calculated. Default value is 32.
 #' @param num_sec_w number of seconds in a time window used to 
 #'    obtain the Fourier coefficients. Typically, this number is 5
 #' @param aggreg_level number of 5 second intervals used to aggregate

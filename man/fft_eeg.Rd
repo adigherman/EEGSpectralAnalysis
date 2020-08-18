@@ -15,7 +15,7 @@ fft_eeg(
 \item{eeg_signal}{EEG signal expressed in micro-Volts}
 
 \item{sampling_frequency}{Sampling frequency of the EEG signal. This is 
-typycally equal to 125Hz. Default value is 125.}
+typically equal to 125Hz. Default value is 125.}
 
 \item{max_frequency}{The maximum frequency for which the spectrum is being 
 calculated. Default value is 32.}
