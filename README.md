@@ -1,3 +1,8 @@
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.com/adigherman/EEGSpectralAnalysis.svg?branch=master)](https://travis-ci.com/adigherman/EEGSpectralAnalysis)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/adigherman/EEGSpectralAnalysis?branch=master&svg=true)](https://ci.appveyor.com/project/adigherman/EEGSpectralAnalysis)
+<!-- badges: end -->
+
 # EEGSpectralAnalysis
 EEG Spectral Analysis Tools
 
