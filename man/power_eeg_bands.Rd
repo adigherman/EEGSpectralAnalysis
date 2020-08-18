@@ -35,8 +35,8 @@ List containing the aggregated power values for each EEG band
 Calculate power values for 
 each of the EEG bands:
     Delta	< 4
-    Theta	≥ 4 and < 8
-    Alpha	≥ 8 and < 14
-    Beta	  ≥ 14 and < 32
-    Gamma  ≥ 32 and < 50
+    Theta	>=4 and < 8
+    Alpha	>= 8 and < 14
+    Beta	  >= 14 and < 32
+    Gamma  >= 32 and < 50
 }
